@@ -3,8 +3,8 @@
 class BasalRs < Formula
   desc "Rust runtime of the Basal decision models (TypeSafe System One API, Metal)"
   homepage "https://github.com/itsoltech/basal-rs"
-  url "https://github.com/itsoltech/basal-rs/releases/download/v0.1.2/basal-0.1.2-aarch64-apple-darwin.tar.gz"
-  sha256 "f0e7a4cd8f17e07a64b6a7154dc7145ba50317da4e09e0a20b139e990411c885"
+  url "https://github.com/itsoltech/basal-rs/releases/download/v0.1.3/basal-0.1.3-aarch64-apple-darwin.tar.gz"
+  sha256 "af1f50a0f431f30e1e60c0108966e68c3d5a78d570ee6eb3779a28cda783e95a"
   license "Apache-2.0"
 
   depends_on arch: :arm64
@@ -19,15 +19,21 @@ class BasalRs < Formula
     <<~EOS
       Check the machine and start the server (basal-1.5-4.5B is downloaded at the first start):
         basal doctor
-        basal serve
+        basal serve                  # or: basal serve --model mini|4.5B|max|owner/name@revision
       As a background service:
         brew services start basal-rs
-      Configuration: basal init --model mini|4.5B|max
+      The service reads #{etc}/basal/basal-serve.yml when it exists:
+        cd #{etc}/basal && basal init --model mini
     EOS
+  end
+
+  def post_install
+    (etc/"basal").mkpath
   end
 
   service do
     run [opt_bin/"basal", "serve"]
+    working_dir etc/"basal"
     keep_alive true
     log_path var/"log/basal.log"
     error_log_path var/"log/basal.log"
