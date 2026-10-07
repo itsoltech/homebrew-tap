@@ -1,10 +1,10 @@
 # Homebrew formula of basal-rs (tap itsoltech/homebrew-tap, Formula/basal-rs.rb), rendered by
-# .github/workflows/release.yml from tools/release/basal-rs.rb.in (0.1.0, 783372e7da0e36ff33f69ae0a9db45dba891b027520cc2c8b412e8fde2bf3f55).
+# .github/workflows/release.yml from tools/release/basal-rs.rb.in (version and checksum of the release package).
 class BasalRs < Formula
   desc "Rust runtime of the Basal decision models (TypeSafe System One API, Metal)"
   homepage "https://github.com/itsoltech/basal-rs"
-  url "https://github.com/itsoltech/basal-rs/releases/download/v0.1.0/basal-0.1.0-aarch64-apple-darwin.tar.gz"
-  sha256 "783372e7da0e36ff33f69ae0a9db45dba891b027520cc2c8b412e8fde2bf3f55"
+  url "https://github.com/itsoltech/basal-rs/releases/download/v0.1.1/basal-0.1.1-aarch64-apple-darwin.tar.gz"
+  sha256 "89654161c9da492d5963a20e7c36b44deb01d7afb3439f3136747522fff5bb02"
   license "Apache-2.0"
 
   depends_on arch: :arm64
