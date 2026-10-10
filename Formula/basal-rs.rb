@@ -3,8 +3,8 @@
 class BasalRs < Formula
   desc "Rust runtime of the Basal decision models (TypeSafe System One API, Metal)"
   homepage "https://github.com/itsoltech/basal-rs"
-  url "https://github.com/itsoltech/basal-rs/releases/download/v0.1.7/basal-0.1.7-aarch64-apple-darwin.tar.gz"
-  sha256 "fe9694e9090579261995a0aae7d414a300c3d78389d910077d7b8c892eb068d6"
+  url "https://github.com/itsoltech/basal-rs/releases/download/v0.1.8/basal-0.1.8-aarch64-apple-darwin.tar.gz"
+  sha256 "b008ff1d80f75d5cdd9376833ec46086de8d890b0784604ee17282316404db0a"
   license "Apache-2.0"
 
   depends_on arch: :arm64
